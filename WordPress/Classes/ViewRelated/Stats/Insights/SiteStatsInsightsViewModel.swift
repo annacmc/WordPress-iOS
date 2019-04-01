@@ -93,7 +93,7 @@ class SiteStatsInsightsViewModel: Observable {
     // MARK: - Refresh Data
 
     func refreshInsights() {
-        ActionDispatcher.dispatch(InsightAction.refreshInsights())
+        ActionDispatcher.dispatch(InsightAction.refreshInsights)
     }
 
 }

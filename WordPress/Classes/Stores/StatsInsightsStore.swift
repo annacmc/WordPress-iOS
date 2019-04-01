@@ -16,19 +16,19 @@ enum InsightAction: Action {
     case receivedTodaysStats(_ todaysStats: StatsTodayInsight?)
     case receivedPostingActivity(_ postingActivity: StatsPostingStreakInsight?)
     case receivedTagsAndCategories(_ tagsAndCategories: StatsTagsAndCategoriesInsight?)
-    case refreshInsights()
+    case refreshInsights
 
     // Insights details
     case receivedAllDotComFollowers(_ allDotComFollowers: StatsGroup?)
     case receivedAllEmailFollowers(_ allDotComFollowers: StatsGroup?)
-    case refreshFollowers()
+    case refreshFollowers
 
-    case receivedAllAuthorsComments()
-    case receivedAllPostsComments()
-    case refreshComments()
+    case receivedAllAuthorsComments
+    case receivedAllPostsComments
+    case refreshComments
 
-    case receivedAllTagsAndCategories()
-    case refreshTagsAndCategories()
+    case receivedAllTagsAndCategories
+    case refreshTagsAndCategories
 }
 
 enum InsightQuery {
@@ -467,15 +467,15 @@ private extension StatsInsightsStore {
         state.fetchingAllPostsComments = true
 
         // TODO: replace with api call when fetch all author and post comments is supported.
-        actionDispatcher.dispatch(InsightAction.receivedAllAuthorsComments())
-        actionDispatcher.dispatch(InsightAction.receivedAllPostsComments())
+        actionDispatcher.dispatch(InsightAction.receivedAllAuthorsComments)
+        actionDispatcher.dispatch(InsightAction.receivedAllPostsComments)
     }
 
     func fetchAllTagsAndCategories() {
         state.fetchingAllTagsAndCategories = true
 
         // TODO: replace with api call when fetch all tags & categories is supported.
-        actionDispatcher.dispatch(InsightAction.receivedAllTagsAndCategories())
+        actionDispatcher.dispatch(InsightAction.receivedAllTagsAndCategories)
     }
 
     func receivedAllDotComFollowers(_ allDotComFollowers: StatsGroup?) {

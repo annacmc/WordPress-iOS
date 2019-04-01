@@ -120,7 +120,7 @@ target 'WordPress' do
     pod 'MRProgress', '0.8.3'
     pod 'Starscream', '3.0.6'
     pod 'SVProgressHUD', '2.2.5'
-    pod 'ZendeskSDK', '2.2.0'
+    pod 'ZendeskSDK', '2.3.1'
 
 
     ## Automattic libraries
