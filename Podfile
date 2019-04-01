@@ -133,9 +133,9 @@ target 'WordPress' do
     ## while PR is in review:
     ## pod 'WPMediaPicker', :git => 'https://github.com/wordpress-mobile/MediaPicker-iOS.git', :commit => 'e546205cd2a992838837b0a4de502507b89b6e63'
 
-    pod 'WordPressAuthenticator', '~> 1.2.0'
-    #pod 'WordPressAuthenticator', :path => '../WordPressAuthenticator-iOS'
-    #pod 'WordPressAuthenticator', :git => 'https://github.com/wordpress-mobile/WordPressAuthenticator-iOS.git' , :commit => '867fa63'
+    # pod 'WordPressAuthenticator', '~> 1.2.0'
+    # pod 'WordPressAuthenticator', :path => '../WordPressAuthenticator-iOS'
+    pod 'WordPressAuthenticator', :git => 'https://github.com/wordpress-mobile/WordPressAuthenticator-iOS.git' , :commit => '9a60b805745e5ab65d304e312fb447b3898403bb'
 
 
     aztec
@@ -230,12 +230,23 @@ target 'WordPressComStatsiOS' do
     ## ====================
     ##
     wordpress_ui
+end
 
-    target 'WordPressComStatsiOSTests' do
-        inherit! :search_paths
-
-        shared_test_pods
-    end
+## WordPress.com Stats Tests
+## =========================
+##
+target 'WordPressComStatsiOSTests' do
+  project 'WordPressComStatsiOS/WordPressComStatsiOS.xcodeproj'
+  
+  shared_with_all_pods
+  shared_with_networking_pods
+  
+  ## Automattic libraries
+  ## ====================
+  ##
+  wordpress_ui
+  
+  shared_test_pods
 end
 
 ## Screenshot Generation
